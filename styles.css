@@ -49,8 +49,11 @@ h1{font-size:clamp(28px,2.88vw,48px);font-size:clamp(1.75rem,4.8cqw,3rem);line-h
 .hero-summary{font-size:18px;line-height:1.85;color:var(--muted);margin:24px auto 0}
 .authors{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 21px;margin:27px auto 0;font-size:14px;font-weight:600}
 .authors span{white-space:nowrap}
+.authors a:hover,.authors a:focus-visible,.author-emails a:hover,.author-emails a:focus-visible{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
 .affiliation{margin-top:12px;font-size:14px;color:var(--muted)}
-.author-note{font-size:11px;color:var(--muted);margin-top:4px}
+.author-note{font-size:12px;color:var(--muted);margin-top:4px}
+.author-emails{display:flex;justify-content:center;flex-wrap:wrap;gap:4px 16px;margin-top:6px}
+.author-emails a{white-space:nowrap}
 .action-row{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:28px}
 .button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:43px;padding:9px 17px;border-radius:30px;border:1px solid #deddd6;background:#ffffffb8;font-size:13px;font-weight:600;color:var(--ink);transition:background .18s,transform .18s,border-color .18s}
 .button:hover:where(:not([aria-disabled="true"])){transform:translateY(-2px);border-color:#bcab9b;background:white}
@@ -233,7 +236,7 @@ h2{font-size:clamp(30px,3.3vw,42px);line-height:1.16}
   .desktop-break{display:none}
   .authors{font-size:12px;gap:9px 16px;margin-top:25px}
   .affiliation{font-size:13px}
-  .author-note{font-size:10px}
+  .author-note{font-size:11px}
   .action-row{gap:8px;max-width:420px;margin-inline:auto;margin-top:23px}
   .button{font-size:12px;min-height:42px;padding:9px 13px;gap:7px}
   .button .icon{width:16px;height:16px}
