@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="SituHOI: Scalable Capture of Scene-Situated Full-Body Human-Object Interaction.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#fcf7ef">
+    <title>SituHOI | Scene-Situated Human-Object Interaction</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dataset.css?v=20261020">
+    <link rel="stylesheet" href="demo.css?v=20261020">
+    <link rel="stylesheet" href="theme.css?v=20261020">
+    <script type="importmap">{"imports":{"three":"./assets/vendor/three/three.module.min.js"}}</script>
+    <script src="content.js" defer></script>
+    <script src="demo.js?v=20261020" defer></script>
+    <script src="script.js?v=20261020" defer></script>
+    <script src="dataset.js?v=20261020" defer></script>
+    <script src="benchmark.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+      <symbol id="icon-play" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z"/></symbol>
+      <symbol id="icon-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+      <symbol id="icon-paper" viewBox="0 0 24 24"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8Zm0 0v6h5M8 13h8m-8 4h6"/></symbol>
+      <symbol id="icon-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5m8-10 5 5-5 5M14 4l-4 16"/></symbol>
+      <symbol id="icon-data" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></symbol>
+      <symbol id="icon-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h4"/></symbol>
+      <symbol id="icon-quote" viewBox="0 0 24 24"><path d="M3 5h7v7a7 7 0 0 1-7 7v-3a4 4 0 0 0 4-4H3Zm11 0h7v7a7 7 0 0 1-7 7v-3a4 4 0 0 0 4-4h-4Z"/></symbol>
+      <symbol id="icon-frame" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m3 16 5-5 5 5 3-3 5 5"/><circle cx="16" cy="9" r="1.5"/></symbol>
+      <symbol id="icon-cube" viewBox="0 0 24 24"><path d="m12 2 9 5v10l-9 5-9-5V7Zm0 10v10M3 7l9 5 9-5M7.5 4.5l9 5v5"/></symbol>
+    </svg>
+
+    <header class="site-header">
+      <a class="brand" href="#overview" aria-label="SituHOI home">Situ<span>HOI</span><span class="brand-dot" aria-hidden="true"></span></a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav"><span></span><span></span></button>
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+        <a href="#demos">Demo</a>
+        <a href="#dataset">Dataset</a>
+        <a href="#pipeline">Pipeline</a>
+        <a href="#benchmark">Benchmark</a>
+        <a href="#citation">Citation</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section id="overview" class="hero" aria-labelledby="project-title">
+        <h1 id="project-title"><span class="title-line"><span class="title-wordmark">Situ<span>HOI</span></span>: Scalable Capture of Scene-Situated</span> <span class="title-line">Full-Body Human-Object Interaction</span></h1>
+        <p class="hero-summary">Scalable, scene-aligned full-body HOI data from one moving RGB-D camera, with FlexHOI-Bench for flexible-time joint prediction.</p>
+        <div class="authors" aria-label="Authors">
+          <span>Qifan Wang</span><span>Qihang Fang</span><span>Boao Shi</span><span>Yushi Du</span><span>Pei Zhou</span><span>Siyan Dong</span><span>Yanchao Yang</span>
+        </div>
+        <p class="affiliation">The University of Hong Kong</p>
+        <p class="author-note">wqf040701@connect.hku.hk</p>
+        <div class="action-row">
+          <a class="button button-primary" href="#demos"><svg class="icon" aria-hidden="true"><use href="#icon-play"/></svg>Demo</a>
+          <a class="button" data-resource="paper" href="https://arxiv.org/pdf/2610.23980" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-paper"/></svg>Paper</a>
+          <a class="button" data-resource="code" role="link" aria-disabled="true" title="Code coming soon"><svg class="icon" aria-hidden="true"><use href="#icon-code"/></svg>Code<span class="button-note" data-pending="code">Soon</span></a>
+          <a class="button" data-resource="dataset" href="#dataset"><svg class="icon" aria-hidden="true"><use href="#icon-data"/></svg>Dataset<span class="button-note" data-pending="dataset">Soon</span></a>
+          <a class="button" href="#citation"><svg class="icon" aria-hidden="true"><use href="#icon-quote"/></svg>Citation</a>
+        </div>
+      </section>
+
+      <section id="demos" class="section-block" aria-labelledby="demos-title">
+        <div class="section-heading"><h2 id="demos-title" class="section-title">Demo</h2></div>
+        <div id="paired-demo" class="paired-demo" aria-label="Eight synchronized capture and reconstruction examples">
+          <div class="demo-toolbar">
+            <div class="demo-tabs" role="tablist" aria-label="Demonstration view">
+              <button id="tab-rgb" role="tab" type="button" aria-selected="true" aria-controls="demo-panel" tabindex="0" data-demo="rgb">RGB capture</button>
+              <button id="tab-depth" role="tab" type="button" aria-selected="false" aria-controls="demo-panel" tabindex="-1" data-demo="depth">Depth capture</button>
+              <button id="tab-aligned" role="tab" type="button" aria-selected="false" aria-controls="demo-panel" tabindex="-1" data-demo="aligned">Scene-aligned motion</button>
+            </div>
+            <button id="demo-play" class="demo-toggle" type="button" data-playing="true" aria-label="Pause all clips" title="Pause" disabled>
+              <svg class="demo-pause-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-pause"/></svg>
+              <svg class="demo-play-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-play"/></svg>
+            </button>
+          </div>
+          <div id="demo-panel" class="demo-panel" role="tabpanel" aria-labelledby="tab-rgb" tabindex="0">
+            <div class="paired-demo-grid">
+              <figure class="demo-clip" data-clip="lift-box"><div class="demo-clip-media"><img src="assets/demos/lift-box/rgb.webp" alt="Lift a box" width="480" height="640"></div><figcaption>Lift a box</figcaption></figure>
+              <figure class="demo-clip" data-clip="wash-hands"><div class="demo-clip-media"><img src="assets/demos/wash-hands/rgb.webp" alt="Wash at the sink" width="480" height="640"></div><figcaption>Wash at the sink</figcaption></figure>
+              <figure class="demo-clip" data-clip="carry-basket"><div class="demo-clip-media"><img src="assets/demos/carry-basket/rgb.webp" alt="Carry a basket" width="480" height="640"></div><figcaption>Carry a basket</figcaption></figure>
+              <figure class="demo-clip" data-clip="sit-sofa"><div class="demo-clip-media"><img src="assets/demos/sit-sofa/rgb.webp" alt="Sit on the sofa" width="480" height="640"></div><figcaption>Sit on the sofa</figcaption></figure>
+              <figure class="demo-clip" data-clip="place-hat"><div class="demo-clip-media"><img src="assets/demos/place-hat/rgb.webp" alt="Place a straw hat" width="480" height="640"></div><figcaption>Place a straw hat</figcaption></figure>
+              <figure class="demo-clip" data-clip="sit-desk"><div class="demo-clip-media"><img src="assets/demos/sit-desk/rgb.webp" alt="Sit at a desk" width="480" height="640"></div><figcaption>Sit at a desk</figcaption></figure>
+              <figure class="demo-clip" data-clip="walk-tv"><div class="demo-clip-media"><img src="assets/demos/walk-tv/rgb.webp" alt="Walk to the television" width="480" height="640"></div><figcaption>Walk to the television</figcaption></figure>
+              <figure class="demo-clip" data-clip="walk-counter"><div class="demo-clip-media"><img src="assets/demos/walk-counter/rgb.webp" alt="Walk beside the counter" width="480" height="640"></div><figcaption>Walk beside the counter</figcaption></figure>
+            </div>
+            <p class="demo-status" role="status" aria-live="polite"></p>
+            <noscript><p class="demo-status">Enable JavaScript for synchronized video playback.</p></noscript>
+          </div>
+        </div>
+      </section>
+
+      <section id="dataset" class="section-block" aria-labelledby="dataset-title">
+        <div class="section-heading"><h2 id="dataset-title" class="section-title">SituHOI Dataset</h2></div>
+        <p class="section-intro">Full-body human motion, dynamic objects, and room-scale geometry in a shared scene coordinate frame, paired with semantic annotations.</p>
+        <dl class="stats-strip">
+          <div><dt>Quality-screened activity</dt><dd>~86<span>hours</span></dd></div>
+          <div><dt>Annotated clips</dt><dd>18,429</dd></div>
+          <div><dt>Indoor rooms</dt><dd>16</dd></div>
+          <div><dt>Dynamic objects</dt><dd>13</dd></div>
+        </dl>
+        <div class="dataset-experience" aria-label="Explore the SituHOI dataset">
+          <div class="dataset-feature">
+            <div class="room-stage" data-state="poster">
+              <div class="stage-heading"><p class="ds-eyebrow">Scene × human × object</p></div>
+              <div class="room-poster"><img src="assets/dataset/featured-room.webp?v=20261020" loading="lazy" decoding="async" alt="3D room with human-object interactions."></div>
+              <div class="room-canvas" aria-label="Interactive 3D room viewer"></div>
+              <span class="semantic-pin" aria-hidden="true" hidden></span>
+              <p class="orbit-help" hidden>Drag to orbit · Scroll to zoom</p>
+              <p class="room-error" role="status"></p>
+              <div class="stage-legend"><span><i></i>Human motion</span><span><i></i>Object poses</span></div>
+              <button class="orbit-launch" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="12" rx="10" ry="4.5"/><path d="m18 7 4 3-4 2M9 6v12m6-12v12"/></svg><span>Explore in 360°</span></button>
+              <div class="orbit-tools" hidden>
+                <button type="button" data-orbit="left" aria-label="Rotate room left" title="Rotate left">‹</button>
+                <button type="button" data-orbit="right" aria-label="Rotate room right" title="Rotate right">›</button>
+                <button type="button" data-orbit="spin" aria-label="Auto-rotate room" aria-pressed="false" title="Auto-rotate"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2 6M20 4v7h-7"/></svg></button>
+                <button type="button" data-orbit="reset" aria-label="Reset room view" title="Reset view"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 9-8 9 8M6 9v11h12V9M10 20v-6h4v6"/></svg></button>
+              </div>
+            </div>
+            <aside class="semantic-panel" aria-labelledby="semantic-title">
+              <p class="ds-eyebrow">Segment-level language</p>
+              <h3 id="semantic-title">Actions with meaning.</h3>
+              <div class="semantic-list" aria-label="Recorded interaction descriptions">
+                <button type="button" class="semantic-choice" data-instance="3" aria-pressed="false">
+                  <q><strong>move</strong> the <mark>box</mark> from the <strong>table to the floor</strong></q>
+                </button>
+                <button type="button" class="semantic-choice" data-instance="2" aria-pressed="false">
+                  <q><strong>pick up</strong> the <mark>basket</mark> on the floor and <strong>put it on the sofa</strong>, tidy up the clothes hanger</q>
+                </button>
+                <button type="button" class="semantic-choice" data-instance="1" aria-pressed="false">
+                  <q><strong>pick up</strong> the <mark>bucket</mark> on the floor and <strong>put it on the floor</strong></q>
+                </button>
+              </div>
+              <p class="semantic-hint"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m4 2 10 8-5 1-2 5Z"/></svg><span>Select a description to find it in 3D.</span></p>
+            </aside>
+          </div>
+          <div class="dataset-collections">
+            <section class="scene-collection" aria-labelledby="scene-collection-title">
+              <div class="collection-heading"><h3 id="scene-collection-title">Lived-in spaces</h3></div>
+              <div class="scene-contact-sheet">
+                <div class="scene-tile" data-room="508"><img src="assets/dataset/room-508.webp" width="440" height="390" alt="Reconstructed indoor space" loading="lazy"></div>
+                <div class="scene-tile" data-room="607"><img src="assets/dataset/room-607.webp" width="440" height="390" alt="Reconstructed indoor space" loading="lazy"></div>
+                <div class="scene-tile" data-room="612"><img src="assets/dataset/room-612.webp" width="440" height="390" alt="Reconstructed indoor space" loading="lazy"></div>
+                <div class="scene-tile" data-room="820"><img src="assets/dataset/room-820.webp" width="440" height="390" alt="Reconstructed indoor space with human-object interactions" loading="lazy"></div>
+                <div class="scene-tile" data-room="824"><img src="assets/dataset/room-824.webp" width="440" height="390" alt="Reconstructed indoor space with human-object interactions" loading="lazy"></div>
+                <div class="scene-tile" data-room="1012"><img src="assets/dataset/room-1012.webp" width="440" height="390" alt="Reconstructed indoor space with human-object interactions" loading="lazy"></div>
+                <div class="scene-tile" data-room="2122"><img src="assets/dataset/room-2122.webp" width="440" height="390" alt="Reconstructed indoor space with human-object interactions" loading="lazy"></div>
+                <div class="scene-tile" data-room="2402"><img src="assets/dataset/room-2402.webp" width="440" height="390" alt="Reconstructed indoor space with human-object interactions" loading="lazy"></div>
+                <div class="scene-tile" data-room="2603"><img src="assets/dataset/room-2603.webp" width="440" height="390" alt="Reconstructed indoor space with human-object interactions" loading="lazy"></div>
+                <div class="scene-tile" data-room="2612"><img src="assets/dataset/room-2612.webp" width="440" height="390" alt="Reconstructed indoor space" loading="lazy"></div>
+                <div class="scene-tile" data-room="2712"><img src="assets/dataset/room-2712.webp" width="440" height="390" alt="Reconstructed indoor space with human-object interactions" loading="lazy"></div>
+                <div class="scene-tile" data-room="2713"><img src="assets/dataset/room-2713.webp" width="440" height="390" alt="Reconstructed indoor space with human-object interactions" loading="lazy"></div>
+                <div class="scene-tile" data-room="2922"><img src="assets/dataset/room-2922.webp?v=20261020" width="440" height="390" alt="Reconstructed indoor space with human-object interactions" loading="lazy"></div>
+                <div class="scene-tile" data-room="fangjian1"><img src="assets/dataset/room-fangjian1.webp" width="440" height="390" alt="Reconstructed indoor space" loading="lazy"></div>
+                <div class="scene-tile" data-room="fangjian2"><img src="assets/dataset/room-fangjian2.webp" width="440" height="390" alt="Reconstructed indoor space with human-object interactions" loading="lazy"></div>
+                <div class="scene-tile" data-room="fangjian3"><img src="assets/dataset/room-fangjian3.webp" width="440" height="390" alt="Reconstructed indoor space with human-object interactions" loading="lazy"></div>
+              </div>
+            </section>
+            <section class="object-collection" aria-labelledby="object-collection-title">
+              <div class="collection-heading"><h3 id="object-collection-title">Everyday objects</h3></div>
+              <div class="object-cabinet">
+                <div class="object-tile" data-object="Chair"><img src="assets/dataset/object-Chair.webp" alt="Chair mesh" loading="lazy" width="800" height="800"></div>
+                <div class="object-tile" data-object="Box"><img src="assets/dataset/object-Box.webp" alt="Box mesh" loading="lazy" width="800" height="800"></div>
+                <div class="object-tile" data-object="Bin"><img src="assets/dataset/object-Bin.webp" alt="Bin mesh" loading="lazy" width="800" height="800"></div>
+                <div class="object-tile" data-object="XiJiaoPen"><img src="assets/dataset/object-XiJiaoPen.webp" alt="Basin mesh" loading="lazy" width="800" height="800"></div>
+                <div class="object-tile" data-object="BigBasket"><img src="assets/dataset/object-BigBasket.webp" alt="Large basket mesh" loading="lazy" width="800" height="800"></div>
+                <div class="object-tile" data-object="Stool"><img src="assets/dataset/object-Stool.webp" alt="Stool mesh" loading="lazy" width="800" height="800"></div>
+                <div class="object-tile" data-object="Cooker"><img src="assets/dataset/object-Cooker.webp" alt="Cooking pot mesh" loading="lazy" width="800" height="800"></div>
+                <div class="object-tile" data-object="SmallBasket"><img src="assets/dataset/object-SmallBasket.webp" alt="Small basket mesh" loading="lazy" width="800" height="800"></div>
+                <div class="object-tile" data-object="Alchohol"><img src="assets/dataset/object-Alchohol.webp" alt="Bottle mesh" loading="lazy" width="800" height="800"></div>
+                <div class="object-tile" data-object="NongFuShanQuan_cup"><img src="assets/dataset/object-NongFuShanQuan_cup.webp" alt="Cup illustration" loading="lazy" width="800" height="800"></div>
+                <div class="object-tile" data-object="Hat"><img src="assets/dataset/object-Hat.webp" alt="Hat mesh" loading="lazy" width="800" height="800"></div>
+                <div class="object-tile" data-object="Bag"><img src="assets/dataset/object-Bag.webp" alt="Bag mesh" loading="lazy" width="800" height="800"></div>
+                <div class="object-tile" data-object="YogaSheet"><img src="assets/dataset/object-YogaSheet.webp" alt="Mat mesh" loading="lazy" width="800" height="800"></div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section id="pipeline" class="section-block" aria-labelledby="pipeline-title">
+        <div class="section-heading"><h2 id="pipeline-title" class="section-title">Reconstruction Pipeline</h2></div>
+        <p class="section-intro">From a one-time room scan and single-camera RGB-D recordings to camera poses, full-body motion, and object trajectories in a shared metric scene frame.</p>
+        <figure class="pipeline-figure">
+          <a class="pipeline-image-link" href="assets/pipeline.webp" target="_blank" rel="noopener noreferrer" aria-label="View full-size reconstruction pipeline figure" title="View full-size figure">
+            <div class="media-frame pipeline-frame" data-media="pipeline">
+              <img src="assets/pipeline.webp" width="3000" height="2076" loading="lazy" decoding="async" alt="SituHOI construction pipeline: room scans and RGB-D interactions feed scene reconstruction, camera localization, human fitting, and object tracking, producing scene-aligned motion with language annotations.">
+            </div>
+          </a>
+        </figure>
+      </section>
+
+      <section id="benchmark" class="section-block" aria-labelledby="benchmark-title">
+        <div class="section-heading"><h2 id="benchmark-title" class="section-title">FlexHOI-Bench</h2></div>
+        <p class="section-intro">A unified benchmark on SituHOI for goal-conditioned human-object motion prediction, with flexible observation and forecast durations.</p>
+        <div class="benchmark-task">
+          <dl class="task-definition">
+            <div><dt>Given</dt><dd><ul class="task-elements"><li>Human-object history</li><li>Scene &amp; object geometry</li><li>Target object pose</li></ul></dd></div>
+            <div><dt>Predict</dt><dd><ul class="task-elements task-targets"><li>Full-body human motion</li><li>Intermediate object trajectory</li></ul></dd></div>
+          </dl>
+          <div id="time-explorer" class="time-explorer" style="--history:6.25%;--endpoint:100%">
+            <div class="explorer-heading"><h3>Explore the time split</h3><span>H + F ≤ 4 s</span></div>
+            <p id="timeline-help" class="sr-only">Drag the split and goal handles, use arrow keys, or choose a reported setting. The ruler measures elapsed time from the window start; the split is the paper’s t = 0. Dots mark reported splits at the current span.</p>
+            <div class="duration-readouts">
+              <label class="history-readout" for="history-duration"><span>Observed history <i>H</i></span><span class="duration-value"><input id="history-duration" type="number" min="0.05" max="3.95" step="0.01" value="0.25" inputmode="decimal" aria-describedby="timeline-help" disabled><span>s</span></span></label>
+              <label class="future-readout" for="forecast-duration"><span>Predicted future <i>F</i></span><span class="duration-value"><input id="forecast-duration" type="number" min="0.05" max="3.75" step="0.01" value="3.75" inputmode="decimal" aria-describedby="timeline-help" disabled><span>s</span></span></label>
+              <div class="span-readout"><span>Active span</span><strong id="active-span">4.00 / 4 s</strong><small id="unused-time">Full time budget</small></div>
+            </div>
+            <div class="duration-axis-wrap">
+              <div id="duration-axis" class="duration-axis">
+                <div class="duration-track" aria-hidden="true"><span class="history-fill"></span><span class="future-fill"></span></div>
+                <div id="reported-marks" class="reported-marks" aria-hidden="true"></div>
+                <button id="history-handle" class="duration-handle history-handle" type="button" role="slider" title="Drag to adjust the history/forecast split" aria-label="History duration H" aria-valuemin="0.05" aria-valuemax="3.95" aria-valuenow="0.25" aria-valuetext="0.25 seconds of history, 3.75 seconds of forecast" aria-orientation="horizontal" aria-describedby="timeline-help" disabled><span aria-hidden="true">↔</span></button>
+                <button id="goal-handle" class="duration-handle goal-handle" type="button" role="slider" title="Drag to adjust the object-goal time" aria-label="Goal time from window start" aria-valuemin="0.30" aria-valuemax="4" aria-valuenow="4" aria-valuetext="Goal at 4 seconds, forecast 3.75 seconds" aria-orientation="horizontal" aria-describedby="timeline-help" disabled><span aria-hidden="true"></span></button>
+                <div class="axis-ticks" aria-hidden="true"><span>0 s</span><span>1 s</span><span>2 s</span><span>3 s</span><span>4 s</span></div>
+              </div>
+            </div>
+            <div class="result-heading"><h4>SharedHOI results</h4><span id="result-state" class="result-state">Reported setting</span></div>
+            <dl class="duration-results" aria-label="SharedHOI metrics at the selected durations: three-seed means reported in Appendix D">
+              <div class="result-card"><dt>Human-root ADE <span>↓</span></dt><dd><div class="metric-value"><span id="result-root">355.04</span><small>mm</small></div></dd></div>
+              <div class="result-card"><dt>Object ADE <span>↓</span></dt><dd><div class="metric-value"><span id="result-object">132.92</span><small>mm</small></div><p id="result-object-sd" class="sr-only">± 0.66 mm across seeds</p></dd></div>
+              <div class="result-card"><dt>Proximity F1 <span>↑</span></dt><dd><div class="metric-value"><span id="result-f1">58.08</span><small>%</small></div></dd></div>
+            </dl>
+            <p id="result-message" class="sr-only" role="status" aria-live="polite" aria-atomic="true">H = 0.25 s · F = 3.75 s — reported in the paper.</p>
+            <div class="preset-heading"><h4>Paper settings <span>H / F in seconds</span></h4><span class="held-out-key">† Held-out timing</span></div>
+            <div id="duration-presets" class="duration-presets" role="group" aria-label="Reported history and forecast duration pairs"></div>
+            <noscript><p class="explorer-help">Enable JavaScript to drag the timeline and browse the paper’s reported settings.</p></noscript>
+          </div>
+        </div>
+        <div class="benchmark-protocol">
+          <article>
+            <h3>Flexible-time evaluation</h3>
+            <p>Evaluate the same model across varying observation and forecast durations, including unseen duration combinations.</p>
+          </article>
+          <article>
+            <h3>Recording-level splits</h3>
+            <p>Keep each recording within a single split, so overlapping motion windows never cross training, validation, and test sets.</p>
+          </article>
+          <article>
+            <h3>Motion &amp; coordination</h3>
+            <p>Assess both trajectory accuracy and human-object coordination through position errors and wrist-object proximity.</p>
+          </article>
+        </div>
+        <div class="reference-method" aria-labelledby="sharedhoi-title">
+          <div class="reference-heading"><h3 id="sharedhoi-title">SharedHOI</h3><span>Reference method</span></div>
+          <p>A shared temporal predictor couples human and object motion, followed by object-translation refinement that preserves the supplied goal.</p>
+        </div>
+        <figure class="benchmark-figure">
+          <a class="paper-image-link" href="assets/benchmark.webp" target="_blank" rel="noopener noreferrer" aria-label="View full-size FlexHOI-Bench and SharedHOI flowchart" title="View full-size figure">
+            <div class="media-frame benchmark-frame" data-media="benchmark">
+              <img src="assets/benchmark.webp" width="3600" height="1275" loading="lazy" decoding="async" alt="SharedHOI for FlexHOI-Bench: motion history, scene and object geometry, an object goal, and query durations are encoded by a shared transformer; human prediction and object refinement produce future motion in scene coordinates.">
+            </div>
+          </a>
+        </figure>
+      </section>
+
+      <section id="citation" class="section-block citation-section" aria-labelledby="citation-title">
+        <div class="section-heading"><h2 id="citation-title" class="section-title">Citation</h2><button class="button copy-button" id="copy-citation" type="button"><svg class="icon" aria-hidden="true"><use href="#icon-copy"/></svg><span>Copy BibTeX</span></button></div>
+        <p class="figure-note citation-note"><a href="https://arxiv.org/abs/2610.23980" target="_blank" rel="noopener noreferrer">arXiv:2610.23980</a></p>
+        <div class="citation-box"><pre id="bibtex" tabindex="0">@misc{wang2026situhoi,
+  title  = {SituHOI: Scalable Capture of Scene-Situated
+            Full-Body Human-Object Interaction},
+  author = {Qifan Wang and Qihang Fang and Boao Shi and
+            Yushi Du and Pei Zhou and Siyan Dong and Yanchao Yang},
+  year   = {2026},
+  eprint = {2610.23980},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  url    = {https://arxiv.org/abs/2610.23980}
+}</pre></div>
+        <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <footer class="site-footer"><span class="brand">Situ<span>HOI</span></span><p>The University of Hong Kong · 2026</p><a class="back-to-top" href="#overview">Back to top <span aria-hidden="true">↑</span></a></footer>
+    <noscript><p class="noscript-note">Navigation and content remain available. Enable JavaScript for demo tabs and one-click citation copying.</p></noscript>
+  </body>
+</html>

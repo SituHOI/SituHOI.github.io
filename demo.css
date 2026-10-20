@@ -1,0 +1,22 @@
+.paired-demo[hidden]{display:none}
+.paired-demo{position:relative;padding:16px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(140deg,#fffdf9,#f4f6f0);box-shadow:var(--shadow)}
+.demo-source{position:absolute;width:1px;height:1px;left:0;top:0;opacity:0;pointer-events:none}
+.demo-toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:14px}
+.demo-toolbar .demo-tabs{display:grid;grid-template-columns:repeat(3,auto);min-width:0;max-width:calc(100% - 60px);margin:0}
+.demo-toolbar .demo-tabs button{min-width:0}
+.demo-toggle{display:grid;place-items:center;flex:0 0 44px;width:44px;height:44px;border:1px solid #d9dfd3;border-radius:50%;color:#536d5a;background:#ffffffb8;transition:background .15s,border-color .15s}
+.demo-toggle:hover{background:#e9efe5;border-color:#b7c7b3}
+.demo-toggle:disabled{opacity:.45;cursor:wait}
+.demo-toggle svg{grid-area:1/1;width:19px;height:19px;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}
+.demo-pause-icon{stroke-width:3.4}
+.demo-play-icon{stroke-width:1.5;transform:translateX(-1px)}
+.demo-toggle[data-playing="true"] .demo-play-icon,.demo-toggle[data-playing="false"] .demo-pause-icon{display:none}
+.paired-demo-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px 10px}
+.demo-clip{margin:0;min-width:0}
+.demo-clip-media{position:relative;aspect-ratio:3/4;overflow:hidden;background:#e9eee6;border-radius:10px;border:1px solid #e0e5db}
+.demo-clip-media>img,.demo-clip-media>canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#e9eee6}
+.demo-clip-media>canvas{visibility:hidden}
+.demo-clip figcaption{margin-top:5px;font-size:10px;line-height:1.45;color:#516456;padding-left:2px}
+.demo-status{font-size:10px;color:#7c6b4e;line-height:1.6;margin:7px 0 0}
+.demo-status:empty{display:none}
+@media(max-width:640px){.paired-demo{padding:11px;border-radius:15px}.paired-demo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 8px}.demo-clip figcaption{font-size:9px}.demo-toolbar{gap:8px;margin-bottom:11px}.demo-toolbar .demo-tabs{max-width:calc(100% - 48px);gap:1px;padding:3px}.demo-toolbar .demo-tabs button{font-size:9px;padding:6px;min-height:36px;line-height:1.4}.demo-toggle{flex-basis:40px;width:40px;height:40px}}
