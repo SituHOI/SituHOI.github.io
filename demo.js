@@ -98,7 +98,7 @@
     updateControls();
     status.textContent = 'Loading matched clips…';
     canvases.forEach(canvas => { canvas.style.visibility = 'hidden'; });
-    const revision = '?v=20261020';
+    const revision = mode === 'rgb' ? '?v=20261020-3' : '?v=20261020';
     cards.forEach(card => { card.querySelector('img').src = `assets/demos/${card.dataset.clip}/${mode}.webp${revision}`; });
     try {
       const source = `assets/demos/atlas/${mode}.mp4${revision}`;
