@@ -41,7 +41,7 @@ body{
 
 h1{
   font-family:Sora,Arial,sans-serif;
-  font-size:clamp(1.45rem,4.15cqw,2.75rem);
+  font-size:clamp(1.55rem,4.4cqw,2.9rem);
   font-weight:600;
   line-height:1.2;
   letter-spacing:-.05em;
@@ -49,7 +49,7 @@ h1{
 .title-wordmark{font-size:1em;letter-spacing:-.065em}
 h2{
   font-family:Sora,Arial,sans-serif;
-  font-size:clamp(26px,2.65vw,34px);
+  font-size:clamp(28px,2.8vw,36px);
   font-weight:600;
   line-height:1.25;
   letter-spacing:-.045em;
@@ -149,8 +149,8 @@ h2{
 @media(max-width:700px){
   .site-header{border-radius:14px}
   .site-nav{border-radius:12px;background:linear-gradient(125deg,#fffefa,#fff7ec 55%,#faf2e3);border-color:#e7ddcf;box-shadow:0 10px 22px #6a4b2b12}
-  h1{font-size:clamp(26px,8.7cqw,34px);line-height:1.2;letter-spacing:-.045em}
-  h2{font-size:27px}
+  h1{font-size:clamp(28px,9.2cqw,36px);line-height:1.2;letter-spacing:-.045em}
+  h2{font-size:29px}
   .button{border-radius:10px}
   .paired-demo,.dataset-experience{border-radius:14px}
 }
